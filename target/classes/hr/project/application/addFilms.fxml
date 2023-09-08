@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" styleClass="backgroundColor" stylesheets="@mainPageCss.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.project.application.admin.AddingFilmController">
+    <top>
+        <AnchorPane prefHeight="19.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+            <fx:include source="menu.fxml" />
+        </AnchorPane>
+    </top>
+   <center>
+        <AnchorPane prefHeight="633.0" prefWidth="594.0" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fx:id="imageView" fitHeight="411.0" fitWidth="258.0" layoutX="33.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="33.0" />
+                <Label fx:id="titleLabel" layoutX="294.0" layoutY="14.0" styleClass="title" text="ADDING NEW FILM" wrapText="true" />
+            <TextField fx:id="titleField" layoutX="349.0" layoutY="70.0" />
+            <TextField fx:id="releaseField" layoutX="349.0" layoutY="110.0" />
+            <TextField fx:id="codeField" layoutX="349.0" layoutY="150.0" />
+            <TextField fx:id="lengthField" layoutX="349.0" layoutY="190.0" />
+            <TextArea fx:id="textArea" layoutX="538.0" layoutY="70.0" prefHeight="200.0" prefWidth="245.0" />
+            <TextField fx:id="pathField" layoutX="349.0" layoutY="230.0" prefHeight="25.0" prefWidth="150.0" />
+            <ComboBox fx:id="genreComboBox" layoutX="348.0" layoutY="308.0" prefWidth="150.0" />
+            <ComboBox fx:id="directorComboBox" layoutX="348.0" layoutY="348.0" prefWidth="150.0" />
+            <Label layoutX="294.0" layoutY="70.0" styleClass="subtitle" text="TITLE:" />
+            <Label layoutX="294.0" layoutY="110.0" styleClass="subtitle" text="YEAR:" />
+            <Label layoutX="294.0" layoutY="150.0" styleClass="subtitle" text="CODE:" />
+            <Label layoutX="275.0" layoutY="190.0" styleClass="subtitle" text="LENGTH:" />
+            <Label layoutX="293.0" layoutY="230.0" styleClass="subtitle" text="PATH:" />
+            <ComboBox fx:id="actorComboBox" layoutX="348.0" layoutY="388.0" prefWidth="150.0" />
+            <Label layoutX="606.0" layoutY="44.0" styleClass="subtitle" text="DESCRIPTION:" />
+            <Label layoutX="283.0" layoutY="308.0" styleClass="subtitle" text="GENRE:" />
+            <Label layoutX="257.0" layoutY="348.0" styleClass="subtitle" text="DIRECTOR:" />
+            <Label layoutX="282.0" layoutY="388.0" styleClass="subtitle" text="ACTOR:" />
+            <Button layoutX="587.0" layoutY="285.0" mnemonicParsing="false" onAction="#onAddButtonClick" prefHeight="46.0" prefWidth="147.0" text="ADD" />
+            <Button layoutX="43.0" layoutY="425.0" mnemonicParsing="false" onAction="#goBack" text="MENU" />
+            </children>
+        </AnchorPane>
+   </center>
+</BorderPane>

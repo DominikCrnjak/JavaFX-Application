@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" styleClass="backgroundColor" stylesheets="@mainPageCss.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.project.application.RatedFilmsController">
+    <right>
+        <GridPane prefHeight="600.0" prefWidth="406.0" styleClass="backgroundColors" BorderPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+
+                <TableView fx:id="tableView" prefHeight="0.0" prefWidth="406.0" GridPane.columnSpan="2" GridPane.rowIndex="1" GridPane.rowSpan="2">
+                    <columns>
+                        <TableColumn fx:id="titleTableColumn" prefWidth="150.0" text="Title" />
+                        <TableColumn fx:id="releaseTableColumn" minWidth="0.0" prefWidth="49.0" text="Year" />
+                        <TableColumn fx:id="genreTableColumn" prefWidth="96.0" text="Genre" />
+                        <TableColumn fx:id="ratingTableColumn" prefWidth="106.0" text="Your Rating" />
+                    </columns>
+                </TableView>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2">
+                    <children>
+                        <TextField fx:id="titleField" layoutX="127.0" layoutY="60.0" onKeyTyped="#onSearchTyping" />
+                        <TextField fx:id="releaseField" layoutX="127.0" layoutY="100.0" onKeyTyped="#onSearchTyping" />
+                        <Label layoutX="163.0" layoutY="21.0" styleClass="title" text="SEARCH" />
+                        <Label layoutX="87.0" layoutY="64.0" text="Title" />
+                        <Label layoutX="85.0" layoutY="104.0" text="Year" />
+                        <Label layoutX="81.0" layoutY="144.0" text="Genre" />
+                        <ComboBox fx:id="genreBox" layoutX="126.0" layoutY="140.0" onAction="#onSearchTyping" prefWidth="150.0" />
+                    </children>
+                </AnchorPane>
+            </children>
+        </GridPane>
+    </right>
+    <center>
+        <AnchorPane prefHeight="633.0" prefWidth="594.0" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fx:id="imageView" fitHeight="411.0" fitWidth="258.0" layoutX="33.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="33.0" />
+                <Label fx:id="titleLabel" layoutX="33.0" layoutY="432.0" styleClass="title" text="Film title" wrapText="true" />
+                <Label layoutX="33.0" layoutY="469.0" styleClass="subtitle" stylesheets="@mainPageCss.css" text="Directed by:" />
+                <Label layoutX="33.0" layoutY="494.0" styleClass="subtitle" stylesheets="@mainPageCss.css" text="Main actors:" />
+                <Label fx:id="directorLabel" layoutX="132.0" layoutY="472.0" styleClass="people" stylesheets="@mainPageCss.css" text="Gulliermo del toro" />
+                <Label fx:id="actorLabel" layoutX="133.0" layoutY="497.0" styleClass="people" stylesheets="@mainPageCss.css" text="John Cena,Clint Eastwood, Johnny Depp" />
+                <Label layoutX="416.0" layoutY="14.0" styleClass="subtitle" text="Your rating" />
+                <RadioButton fx:id="button1" contentDisplay="GRAPHIC_ONLY" layoutX="387.0" layoutY="45.0" mnemonicParsing="false" />
+                <RadioButton fx:id="button3" contentDisplay="GRAPHIC_ONLY" layoutX="447.0" layoutY="45.0" mnemonicParsing="false" />
+                <RadioButton fx:id="button2" contentDisplay="GRAPHIC_ONLY" layoutX="417.0" layoutY="45.0" mnemonicParsing="false" />
+                <RadioButton fx:id="button4" contentDisplay="GRAPHIC_ONLY" layoutX="477.0" layoutY="45.0" mnemonicParsing="false" />
+                <RadioButton fx:id="button5" contentDisplay="GRAPHIC_ONLY" layoutX="507.0" layoutY="45.0" mnemonicParsing="false" />
+            <Label layoutX="396.0" layoutY="78.0" text="1" />
+            <Label layoutX="426.0" layoutY="78.0" text="2" />
+            <Label layoutX="456.0" layoutY="78.0" text="3" />
+            <Label layoutX="486.0" layoutY="78.0" text="4" />
+            <Label layoutX="516.0" layoutY="78.0" text="5" />
+            <Label layoutX="405.0" layoutY="107.0" styleClass="subtitle" text="Rated on date" />
+            <Label layoutX="412.0" layoutY="157.0" styleClass="subtitle" text="Your review" />
+            <TextArea fx:id="reviewArea" layoutX="363.0" layoutY="182.0" prefHeight="200.0" prefWidth="200.0" />
+            <Label fx:id="dateLabel" layoutX="430.0" layoutY="132.0" text="17.01.2001." />
+            <Button layoutX="476.0" layoutY="407.0" mnemonicParsing="false" onAction="#onButtonDelete" prefHeight="46.0" prefWidth="90.0" style="-fx-background-color: #f56042;" text="DELETE" />
+            <Button layoutX="365.0" layoutY="407.0" mnemonicParsing="false" onAction="#onButtonEdit" prefHeight="46.0" prefWidth="90.0" text="EDIT" />
+            </children>
+        </AnchorPane>
+    </center>
+    <top>
+        <AnchorPane prefHeight="19.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+            <fx:include source="menu.fxml" />
+        </AnchorPane>
+    </top>
+</BorderPane>
